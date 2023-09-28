@@ -1,4 +1,5 @@
 -- Query DDL untuk membuat database 'perusahaan' jika belum ada
+-- CREATE DATABASE perusahaan; -- Or make manually in pgAdmin
 
 -- Query DDL untuk menggunakan database 'perusahaan'
 -- \c perusahaan;
