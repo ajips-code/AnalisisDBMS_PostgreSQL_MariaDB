@@ -1,5 +1,5 @@
 -- Query DDL untuk membuat database 'perusahaan'
-CREATE DATABASE perusahaan;
+CREATE DATABASE IF NOT EXISTS perusahaan;
 
 -- Query DDL untuk menggunakan database 'perusahaan'
 USE perusahaan;
@@ -56,12 +56,12 @@ VALUES
     ('002', '54321', 'Jane Doe', 'Perempuan', 'Surabaya', '987-654-3210', 'Kristen', 'Belum Kawin', 'Jl. kaliurang 2'),
     ('003', '67890', 'Bob Smith', 'Laki-laki', 'Bandung', '555-555-5555', 'Buddha', 'Kawin', 'Jl. Cimahi 3'),
     ('004', '98765', 'Alice Smith', 'Perempuan', 'Yogyakarta', '111-222-3333', 'Hindu', 'Belum Kawin', 'Jl. jalan 4'),
-    ('005', '24680', 'Eva Johnson', 'Perempuan', 'Semarang', '777-888-9999', 'Kristen', 'Kawin', 'Jl. bebatuan 5');
+    ('005', '24680', 'Eva Johnson', 'Perempuan', 'Semarang', '777-888-9999', 'Kristen', 'Kawin', 'Jl. bebatuan 5'),
     ('006', '13579', 'Siti Rahman', 'Perempuan', 'Medan', '555-123-4567', 'Islam', 'Kawin', 'Jl. Horas 6'),
     ('007', '86420', 'Ahmad Abdullah', 'Laki-laki', 'Makassar', '123-987-6543', 'Islam', 'Belum Kawin', 'Jl. Hasanuddi 17'),
     ('008', '97531', 'Fitria', 'Perempuan', 'Surabaya', '888-777-1111', 'Kristen', 'Kawin', 'Jl. Arwana 38'),
     ('009', '12321', 'David Liem', 'Laki-laki', 'Jakarta', '222-333-4444', 'Buddha', 'Kawin', 'Jl. Flamboyan 9'),
-    ('010', '56789', 'Linda Syafitr', 'Perempuan', 'Bandung', '777-333-5555', 'Kristen', 'Belum Kawin', 'Jl. Blimbing 10');
+    ('010', '56789', 'Linda Syafitr', 'Perempuan', 'Bandung', '777-333-5555', 'Kristen', 'Belum Kawin', 'Jl. Blimbing 10'),
     ('011', '54321', 'M Rudi', 'Laki-laki', 'Surabaya', '123-987-6543', 'Islam', 'Belum Kawin', 'Jl. Gondogan 11'),
     ('012', '78901', 'Mira Putri', 'Perempuan', 'Bandung', '555-111-2222', 'Hindu', 'Belum Kawin', 'Jl. Banteh 12'),
     ('013', '45678', 'Budi Prapto', 'Laki-laki', 'Semarang', '333-555-7777', 'Kristen', 'Kawin', 'Jl. Merah 13'),
@@ -71,7 +71,7 @@ VALUES
     ('017', '54321', 'Baihaqi Rahman', 'Laki-laki', 'Lampung', '123-333-4444', 'Islam', 'Belum Kawin', 'Jl. Begal 17'),
     ('018', '23456', 'Ani Wijaya', 'Perempuan', 'Yogyakarta', '555-777-8888', 'Kristen', 'Kawin', 'Jl. Jakall 18'),
     ('019', '78901', 'Sandy Nugroho', 'Laki-laki', 'Aceh', '111-333-5555', 'Islam', 'Kawin', 'Jl. Bimasakti 19'),
-    ('020', '45678', 'Ina Anggi', 'Perempuan', 'Bali', '222-444-6666', 'Hindu', 'Kawin', 'Jl. Jaka 20');
+    ('020', '45678', 'Ina Anggi', 'Perempuan', 'Bali', '222-444-6666', 'Hindu', 'Kawin', 'Jl. Jaka 20'),
     ('021', '10101', 'Ahmad Sanjaya', 'Laki-laki', 'Bali', '555-123-4567', 'Hindu', 'Kawin', 'Jl. Jaka 21'),
     ('022', '20202', 'Siti Rahayu', 'Perempuan', 'Magelang', '123-555-9999', 'Kristen', 'Belum Kawin', 'Jl. Magelang 22'),
     ('023', '30303', 'Budi Sutrisno', 'Laki-laki', 'Surakarta', '555-222-4444', 'Islam', 'Kawin', 'Jl. Tridasono 23'),
@@ -96,7 +96,7 @@ VALUES
     ('042', '35353', 'Mira Indah', 'Perempuan', 'Sleman', '555-777-2222', 'Islam', 'Kawin', 'Jl. Meman 42'),
     ('043', '37373', 'Budiman', 'Laki-laki', 'Semedang', '666-111-5555', 'Kristen', 'Belum Kawin', 'Jl. Madang 43'),
     ('044', '39393', 'Dewi Putri', 'Perempuan', 'Ciputat', '888-555-1111', 'Buddha', 'Kawin', 'Jl. Putat 44'),
-    ('045', '41414', 'Rizky Putra', 'Laki-laki', 'Surakarta', '777-222-4444', 'Islam', 'Kawin', 'Jl. Kartono 145');
+    ('045', '41414', 'Rizky Putra', 'Laki-laki', 'Surakarta', '777-222-4444', 'Islam', 'Kawin', 'Jl. Kartono 145'),
     ('046', '43434', 'Ahmad Sandi', 'Laki-laki', 'Padang', '555-888-7777', 'Islam', 'Kawin', 'Jl. Panjang 46'),
     ('047', '45454', 'Siti Lestari Putri', 'Perempuan', 'Bandung', '111-333-6666', 'Kristen', 'Belum Kawin', 'Jl. Batikan 47'),
     ('048', '47474', 'Budi Prasetyo Nugroho', 'Laki-laki', 'Madiun', '777-333-1111', 'Islam', 'Belum Kawin', 'Jl. Stadiun Baru 48'),
@@ -290,29 +290,29 @@ SELECT * FROM Karyawan;
 SELECT * FROM Cuti;
 SELECT * FROM Lembur;
 SELECT * FROM Penggajian;
-SELECT * FROM "Karyawan" WHERE nama = 'John Djie'; --Select Data Karyawan dengan Nama Tertentu
-SELECT * FROM "Cuti" WHERE karyawan_id = 1; --Select Data Cuti untuk Karyawan Tertentu
-SELECT * FROM "Lembur" WHERE jumlah > 5; --Select Data Lembur dengan Jumlah Lembur Lebih dari 5 Jam
-SELECT * FROM "Penggajian" WHERE EXTRACT(MONTH FROM tanggal) = 9; --Select Data Penggajian pada Bulan Tertentu
-SELECT * FROM "Karyawan" WHERE status = 'Belum Kawin'; --Select Data Karyawan yang Belum Menikah
-SELECT * FROM "Karyawan" WHERE agama = 'Islam'; --Select Data Karyawan yang Agamanya Islam
-SELECT * FROM "Penggajian" WHERE total_gaji > 5000; --Select Data Penggajian dengan Total Gaji di Atas 5000
-SELECT * FROM "Lembur" WHERE karyawan_id = 3; --Select Data Lembur yang Dilakukan oleh Karyawan Tertentu
-SELECT * FROM "Cuti" WHERE tanggal_cuti = '2023-09-15'; --Select Data Cuti yang Diambil pada Tanggal Tertentu
-SELECT * FROM "Penggajian" WHERE keterangan = 'Bonus'; --Select Data Penggajian yang Memiliki Keterangan "Bonus"
+SELECT * FROM Karyawan WHERE nama = 'John Djie'; -- Select Data Karyawan dengan Nama Tertentu
+SELECT * FROM Cuti WHERE karyawan_id = 1; -- Select Data Cuti untuk Karyawan Tertentu
+SELECT * FROM Lembur WHERE jumlah > 5; -- Select Data Lembur dengan Jumlah Lembur Lebih dari 5 Jam
+SELECT * FROM Penggajian WHERE EXTRACT(MONTH FROM tanggal) = 9; -- Select Data Penggajian pada Bulan Tertentu
+SELECT * FROM Karyawan WHERE status = 'Belum Kawin'; -- Select Data Karyawan yang Belum Menikah
+SELECT * FROM Karyawan WHERE agama = 'Islam'; -- Select Data Karyawan yang Agamanya Islam
+SELECT * FROM Penggajian WHERE total_gaji > 5000; -- Select Data Penggajian dengan Total Gaji di Atas 5000
+SELECT * FROM Lembur WHERE karyawan_id = 3; -- Select Data Lembur yang Dilakukan oleh Karyawan Tertentu
+SELECT * FROM Cuti WHERE tanggal_cuti = '2023-09-15'; -- Select Data Cuti yang Diambil pada Tanggal Tertentu
+SELECT * FROM Penggajian WHERE keterangan = 'Bonus'; -- Select Data Penggajian yang Memiliki Keterangan Bonus
 
 -- Query DML untuk menghapus atau DELETE data dalam tabel Karyawan, Cuti, Lembur dan Penggajian
-DELETE FROM "Karyawan" WHERE id = 1; --Menghapus Karyawan dengan ID Tertentu
-DELETE FROM "Cuti" WHERE karyawan_id = 1; --Menghapus Cuti untuk Karyawan Tertentu:
-DELETE FROM "Lembur" WHERE jumlah < 3; --Menghapus Data Lembur dengan Jumlah Lembur Kurang dari 3 Jam:
-DELETE FROM "Penggajian" WHERE total_gaji < 2000; --Menghapus Data Penggajian dengan Total Gaji di Bawah 2000
+DELETE FROM Karyawan WHERE id = 1; -- Menghapus Karyawan dengan ID Tertentu
+DELETE FROM Cuti WHERE karyawan_id = 1; -- Menghapus Cuti untuk Karyawan Tertentu:
+DELETE FROM Lembur WHERE jumlah < 3; -- Menghapus Data Lembur dengan Jumlah Lembur Kurang dari 3 Jam:
+DELETE FROM Penggajian WHERE total_gaji < 2000; -- Menghapus Data Penggajian dengan Total Gaji di Bawah 2000
 
 -- Query Operator Penghubung AND dan OR 
-SELECT * FROM Karyawan WHERE jenis_kelamin = 'Laki-laki' AND status = 'Kawin'; --Untuk menggabungkan beberapa kondisi dan memeriksa apakah semua kondisi tersebut benar
-SELECT * FROM Karyawan WHERE agama = 'Islam' OR agama = 'Kristen'; --Untuk menggabungkan beberapa kondisi dan memeriksa apakah salah satu kondisi tersebut benar
+SELECT * FROM Karyawan WHERE jenis_kelamin = 'Laki-laki' AND status = 'Kawin'; -- Untuk menggabungkan beberapa kondisi dan memeriksa apakah semua kondisi tersebut benar
+SELECT * FROM Karyawan WHERE agama = 'Islam' OR agama = 'Kristen'; -- Untuk menggabungkan beberapa kondisi dan memeriksa apakah salah satu kondisi tersebut benar
 
 -- Qeury Perhitungan MAX, MIN, SUM, dan COUNT
-SELECT MAX(jumlah_gaji) FROM Penggajian; --Untuk mengambil nilai maksimum dari kolom tertentu.
-SELECT MIN(jumlah_lembur) FROM Lembur; -- Untuk mengambil nilai minimum dari kolom tertentu
-SELECT SUM(jumlah) FROM Cuti WHERE karyawan_id = 1; --Untuk menghitung total dari kolom tertentu
-SELECT COUNT(*) FROM Karyawan WHERE status = 'Belum Kawin'; --Untuk menghitung jumlah baris yang memenuhi kondisi tertentu
+SELECT MAX(jumlah_gaji) FROM Penggajian; -- Untuk mengambil nilai maksimum dari kolom tertentu.
+SELECT MIN(jumlah) FROM Lembur; -- Untuk mengambil nilai minimum dari kolom tertentu
+SELECT SUM(jumlah) FROM Cuti WHERE karyawan_id = 1; -- Untuk menghitung total dari kolom tertentu
+SELECT COUNT(*) FROM Karyawan WHERE status = 'Belum Kawin'; -- Untuk menghitung jumlah baris yang memenuhi kondisi tertentu

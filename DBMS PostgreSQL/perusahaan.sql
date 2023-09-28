@@ -1,8 +1,7 @@
 -- Query DDL untuk membuat database 'perusahaan' jika belum ada
-CREATE DATABASE perusahaan;
 
 -- Query DDL untuk menggunakan database 'perusahaan'
-\c perusahaan;
+-- \c perusahaan;
 
 -- Query DDL untuk membuat tabel 'Karyawan'
 CREATE TABLE Karyawan (
@@ -21,7 +20,7 @@ CREATE TABLE Karyawan (
 -- Query DDL untuk membuat tabel 'Cuti'
 CREATE TABLE Cuti (
     id SERIAL PRIMARY KEY,
-    karyawan_id INT,
+    karyawan_id Foreign Key INT,
     tanggal_cuti DATE,
     jumlah INT,
     FOREIGN KEY (karyawan_id) REFERENCES Karyawan(id)
@@ -49,19 +48,19 @@ CREATE TABLE Penggajian (
     FOREIGN KEY (karyawan_id) REFERENCES Karyawan(id)
 );
 
--- Query DML untuk menginput data dalam tabel karyawan
+-- Query DML untuk menginput atau INSERT 50 data dalam tabel Karyawan
 INSERT INTO Karyawan (nip, nik, nama, jenis_kelamin, tempat_lahir, telpon, agama, status, alamat)
 VALUES
     ('001', '12345', 'John Djie', 'Laki-laki', 'Jakarta', '123-456-7890', 'Islam', 'Kawin', 'Jl. munggur 1'),
     ('002', '54321', 'Jane Doe', 'Perempuan', 'Surabaya', '987-654-3210', 'Kristen', 'Belum Kawin', 'Jl. kaliurang 2'),
     ('003', '67890', 'Bob Smith', 'Laki-laki', 'Bandung', '555-555-5555', 'Buddha', 'Kawin', 'Jl. Cimahi 3'),
     ('004', '98765', 'Alice Smith', 'Perempuan', 'Yogyakarta', '111-222-3333', 'Hindu', 'Belum Kawin', 'Jl. jalan 4'),
-    ('005', '24680', 'Eva Johnson', 'Perempuan', 'Semarang', '777-888-9999', 'Kristen', 'Kawin', 'Jl. bebatuan 5');
+    ('005', '24680', 'Eva Johnson', 'Perempuan', 'Semarang', '777-888-9999', 'Kristen', 'Kawin', 'Jl. bebatuan 5'),
     ('006', '13579', 'Siti Rahman', 'Perempuan', 'Medan', '555-123-4567', 'Islam', 'Kawin', 'Jl. Horas 6'),
     ('007', '86420', 'Ahmad Abdullah', 'Laki-laki', 'Makassar', '123-987-6543', 'Islam', 'Belum Kawin', 'Jl. Hasanuddi 17'),
     ('008', '97531', 'Fitria', 'Perempuan', 'Surabaya', '888-777-1111', 'Kristen', 'Kawin', 'Jl. Arwana 38'),
     ('009', '12321', 'David Liem', 'Laki-laki', 'Jakarta', '222-333-4444', 'Buddha', 'Kawin', 'Jl. Flamboyan 9'),
-    ('010', '56789', 'Linda Syafitr', 'Perempuan', 'Bandung', '777-333-5555', 'Kristen', 'Belum Kawin', 'Jl. Blimbing 10');
+    ('010', '56789', 'Linda Syafitr', 'Perempuan', 'Bandung', '777-333-5555', 'Kristen', 'Belum Kawin', 'Jl. Blimbing 10'),
     ('011', '54321', 'M Rudi', 'Laki-laki', 'Surabaya', '123-987-6543', 'Islam', 'Belum Kawin', 'Jl. Gondogan 11'),
     ('012', '78901', 'Mira Putri', 'Perempuan', 'Bandung', '555-111-2222', 'Hindu', 'Belum Kawin', 'Jl. Banteh 12'),
     ('013', '45678', 'Budi Prapto', 'Laki-laki', 'Semarang', '333-555-7777', 'Kristen', 'Kawin', 'Jl. Merah 13'),
@@ -71,7 +70,7 @@ VALUES
     ('017', '54321', 'Baihaqi Rahman', 'Laki-laki', 'Lampung', '123-333-4444', 'Islam', 'Belum Kawin', 'Jl. Begal 17'),
     ('018', '23456', 'Ani Wijaya', 'Perempuan', 'Yogyakarta', '555-777-8888', 'Kristen', 'Kawin', 'Jl. Jakall 18'),
     ('019', '78901', 'Sandy Nugroho', 'Laki-laki', 'Aceh', '111-333-5555', 'Islam', 'Kawin', 'Jl. Bimasakti 19'),
-    ('020', '45678', 'Ina Anggi', 'Perempuan', 'Bali', '222-444-6666', 'Hindu', 'Kawin', 'Jl. Jaka 20');
+    ('020', '45678', 'Ina Anggi', 'Perempuan', 'Bali', '222-444-6666', 'Hindu', 'Kawin', 'Jl. Jaka 20'),
     ('021', '10101', 'Ahmad Sanjaya', 'Laki-laki', 'Bali', '555-123-4567', 'Hindu', 'Kawin', 'Jl. Jaka 21'),
     ('022', '20202', 'Siti Rahayu', 'Perempuan', 'Magelang', '123-555-9999', 'Kristen', 'Belum Kawin', 'Jl. Magelang 22'),
     ('023', '30303', 'Budi Sutrisno', 'Laki-laki', 'Surakarta', '555-222-4444', 'Islam', 'Kawin', 'Jl. Tridasono 23'),
@@ -96,14 +95,14 @@ VALUES
     ('042', '35353', 'Mira Indah', 'Perempuan', 'Sleman', '555-777-2222', 'Islam', 'Kawin', 'Jl. Meman 42'),
     ('043', '37373', 'Budiman', 'Laki-laki', 'Semedang', '666-111-5555', 'Kristen', 'Belum Kawin', 'Jl. Madang 43'),
     ('044', '39393', 'Dewi Putri', 'Perempuan', 'Ciputat', '888-555-1111', 'Buddha', 'Kawin', 'Jl. Putat 44'),
-    ('045', '41414', 'Rizky Putra', 'Laki-laki', 'Surakarta', '777-222-4444', 'Islam', 'Kawin', 'Jl. Kartono 145');
+    ('045', '41414', 'Rizky Putra', 'Laki-laki', 'Surakarta', '777-222-4444', 'Islam', 'Kawin', 'Jl. Kartono 145'),
     ('046', '43434', 'Ahmad Sandi', 'Laki-laki', 'Padang', '555-888-7777', 'Islam', 'Kawin', 'Jl. Panjang 46'),
     ('047', '45454', 'Siti Lestari Putri', 'Perempuan', 'Bandung', '111-333-6666', 'Kristen', 'Belum Kawin', 'Jl. Batikan 47'),
     ('048', '47474', 'Budi Prasetyo Nugroho', 'Laki-laki', 'Madiun', '777-333-1111', 'Islam', 'Belum Kawin', 'Jl. Stadiun Baru 48'),
     ('049', '49494', 'Dewi Rahman', 'Perempuan', 'Blitar', '333-777-8888', 'Kristen', 'Kawin', 'Jl. Banter 49'),
     ('050', '51515', 'Rizal Setia Hati', 'Laki-laki', 'Kediri', '222-555-9999', 'Islam', 'Belum Kawin', 'Jl. Berdiri 50');
 
--- Query DML untuk menginput 50 data dalam tabel Cuti
+-- Query DML untuk menginput INSERT  50 data dalam tabel Cuti
 INSERT INTO Cuti (karyawan_id, tanggal_cuti, jumlah)
 VALUES
     (1, '2023-01-02', 5),
@@ -157,7 +156,7 @@ VALUES
     (49, '2023-08-25', 5),
     (50, '2023-09-02', 3);
 
--- Query DML untuk menginput 50 data dalam tabel Lembur
+-- Query DML untuk menginput INSERT 50 data dalam tabel Lembur
 INSERT INTO Lembur (karyawan_id, tanggal_lembur, jumlah)
 VALUES
     (1, '2023-01-02', 3),
@@ -211,7 +210,7 @@ VALUES
     (49, '2023-08-25', 5),
     (50, '2023-09-02', 3);
 
--- Query DML untuk menginput 50 data dalam tabel Penggajian
+-- Query DML untuk menginput INSERT 50 data dalam tabel Penggajian
 INSERT INTO Penggajian (tanggal, keterangan, karyawan_id, jumlah_gaji, jumlah_lembur, potongan, total_gaji)
 VALUES
     ('2023-09-01', 'Gaji Bulan September', 1, 5000000, 1500000, 500000, 6000000),
@@ -266,46 +265,46 @@ VALUES
     ('2023-09-01', 'Gaji Bulan September', 50, 7000000, 1800000, 900000, 7900000);
 
 -- Query DML untuk mengedit atau UPDATE data dalam tabel Karyawan
-UPDATE Karyawan SET alamat = 'Jl. Mawar 123' WHERE id = 1; -- Mengganti alamat Karyawan dengan ID 1
-UPDATE Karyawan SET status = 'Kawin' WHERE nip = '12345'; -- Mengganti status Karyawan dengan NIP '12345'
-UPDATE Karyawan SET telpon = '555-555-5555' WHERE nik = '1234567890'; -- Mengganti nomor telepon Karyawan dengan NIK '1234567890'
+UPDATE "Karyawan" SET alamat = 'Jl. Mawar 123' WHERE id = 1; -- Mengganti alamat Karyawan dengan ID 1
+UPDATE "Karyawan" SET status = 'Kawin' WHERE nip = '12345'; -- Mengganti status Karyawan dengan NIP '12345'
+UPDATE "Karyawan" SET telpon = '555-555-5555' WHERE nik = '1234567890'; -- Mengganti nomor telepon Karyawan dengan NIK '1234567890'
 
 -- Query DML untuk mengedit atau UPDATE data dalam tabel Cuti
-UPDATE Cuti SET jumlah = 5 WHERE karyawan_id = 2 AND tanggal_cuti = '2023-01-15'; -- Mengganti jumlah cuti Karyawan dengan ID 2 pada tanggal tertentu
-UPDATE Cuti SET tanggal_cuti = '2023-02-20' WHERE karyawan_id = 3; -- Mengganti tanggal cuti Karyawan dengan ID 3
-UPDATE Cuti SET jumlah = 7 WHERE karyawan_id = (SELECT id FROM Karyawan WHERE nip = '98765'); -- Mengganti jumlah cuti Karyawan dengan NIP '98765'
+UPDATE "Cuti" SET jumlah = 5 WHERE karyawan_id = 2 AND tanggal_cuti = '2023-01-15'; -- Mengganti jumlah cuti Karyawan dengan ID 2 pada tanggal tertentu
+UPDATE "Cuti" SET tanggal_cuti = '2023-02-20' WHERE karyawan_id = 3; -- Mengganti tanggal cuti Karyawan dengan ID 3
+UPDATE "Cuti" SET jumlah = 7 WHERE karyawan_id = (SELECT id FROM Karyawan WHERE nip = '98765'); -- Mengganti jumlah cuti Karyawan dengan NIP '98765'
 
 -- Query DML untuk mengedit atau UPDATE data dalam tabel Lembur
-UPDATE Lembur SET jumlah = 4 WHERE karyawan_id = 5 AND tanggal_lembur = '2023-01-10'; -- Mengganti jumlah lembur Karyawan dengan ID 5 pada tanggal tertentu
-UPDATE Lembur SET tanggal_lembur = '2023-02-15' WHERE karyawan_id = 7; -- Mengganti tanggal lembur Karyawan dengan ID 7
-UPDATE Lembur SET jumlah = 3 WHERE karyawan_id = (SELECT id FROM Karyawan WHERE nik = '1234567890'); -- Mengganti jumlah lembur Karyawan dengan NIK '1234567890'
+UPDATE "Lembur" SET jumlah = 4 WHERE karyawan_id = 5 AND tanggal_lembur = '2023-01-10'; -- Mengganti jumlah lembur Karyawan dengan ID 5 pada tanggal tertentu
+UPDATE "Lembur" SET tanggal_lembur = '2023-02-15' WHERE karyawan_id = 7; -- Mengganti tanggal lembur Karyawan dengan ID 7
+UPDATE "Lembur" SET jumlah = 3 WHERE karyawan_id = (SELECT id FROM Karyawan WHERE nik = '1234567890'); -- Mengganti jumlah lembur Karyawan dengan NIK '1234567890'
 
 -- Query DML untuk mengedit atau UPDATE data dalam tabel Penggajian
-UPDATE Penggajian SET jumlah_gaji = 7500000 WHERE karyawan_id = 10 AND tanggal = '2023-01-05'; -- Mengganti jumlah gaji Karyawan dengan ID 10 pada tanggal tertentu
-UPDATE Penggajian SET keterangan = 'Gaji Bulan Februari (Revisi)' WHERE id = 15; -- Mengganti keterangan Penggajian dengan ID 15
-UPDATE Penggajian SET potongan = 1000000 WHERE karyawan_id = (SELECT id FROM Karyawan WHERE nip = '54321'); -- Mengganti jumlah potongan Penggajian Karyawan dengan NIP '54321'
+UPDATE "Penggajian" SET jumlah_gaji = 7500000 WHERE karyawan_id = 10 AND tanggal = '2023-01-05'; -- Mengganti jumlah gaji Karyawan dengan ID 10 pada tanggal tertentu
+UPDATE "Penggajian" SET keterangan = 'Gaji Bulan Februari (Revisi)' WHERE id = 15; -- Mengganti keterangan Penggajian dengan ID 15
+UPDATE "Penggajian" SET potongan = 1000000 WHERE karyawan_id = (SELECT id FROM Karyawan WHERE nip = '54321'); -- Mengganti jumlah potongan Penggajian Karyawan dengan NIP '54321'
 
 -- Query DML untuk mencetak atau SELECT data dalam tabel Karyawan, Cuti, Lembur dan Penggajian
 SELECT * FROM Karyawan;
 SELECT * FROM Cuti;
 SELECT * FROM Lembur;
 SELECT * FROM Penggajian;
-SELECT * FROM Karyawan WHERE nama = 'John Djie'; --Select Data Karyawan dengan Nama Tertentu
-SELECT * FROM Cuti WHERE karyawan_id = 1; --Select Data Cuti untuk Karyawan Tertentu
+SELECT * FROM Karyawan WHERE nama = 'John Djie'; -- Select Data Karyawan dengan Nama Tertentu
+SELECT * FROM Cuti WHERE karyawan_id = 1; -- Select Data Cuti untuk Karyawan Tertentu
 SELECT * FROM Lembur WHERE jumlah > 5; -- Select Data Lembur dengan Jumlah Lembur Lebih dari 5 Jam
-SELECT * FROM Penggajian WHERE EXTRACT(MONTH FROM tanggal) = 9; --Select Data Penggajian pada Bulan Tertentu
-SELECT * FROM Karyawan WHERE status = 'Belum Kawin'; --Select Data Karyawan yang Belum Menikah
-SELECT * FROM Karyawan WHERE agama = 'Islam'; --Select Data Karyawan yang Agamanya Islam
-SELECT * FROM Penggajian WHERE total_gaji > 5000; --Select Data Penggajian dengan Total Gaji di Atas 5000
+SELECT * FROM Penggajian WHERE EXTRACT(MONTH FROM tanggal) = 9; -- Select Data Penggajian pada Bulan Tertentu
+SELECT * FROM Karyawan WHERE status = 'Belum Kawin'; -- Select Data Karyawan yang Belum Menikah
+SELECT * FROM Karyawan WHERE agama = 'Islam'; -- Select Data Karyawan yang Agamanya Islam
+SELECT * FROM Penggajian WHERE total_gaji > 5000; -- Select Data Penggajian dengan Total Gaji di Atas 5000
 SELECT * FROM Lembur WHERE karyawan_id = 3; -- Select Data Lembur yang Dilakukan oleh Karyawan Tertentu
-SELECT * FROM Cuti WHERE tanggal_cuti = '2023-09-15'; --Select Data Cuti yang Diambil pada Tanggal Tertentu
-SELECT * FROM Penggajian WHERE keterangan = 'Bonus'; --Select Data Penggajian yang Memiliki Keterangan "Bonus"
+SELECT * FROM Cuti WHERE tanggal_cuti = '2023-09-15'; -- Select Data Cuti yang Diambil pada Tanggal Tertentu
+SELECT * FROM Penggajian WHERE keterangan = 'Bonus'; -- Select Data Penggajian yang Memiliki Keterangan "Bonus"
 
 -- Query DML untuk menghapus atau DELETE data dalam tabel Karyawan, Cuti, Lembur dan Penggajian
-DELETE FROM "Karyawan" WHERE id = 1; --Menghapus Karyawan dengan ID Tertentu
-DELETE FROM "Cuti" WHERE karyawan_id = 1; --Menghapus Cuti untuk Karyawan Tertentu:
-DELETE FROM "Lembur" WHERE jumlah < 3; --Menghapus Data Lembur dengan Jumlah Lembur Kurang dari 3 Jam:
-DELETE FROM "Penggajian" WHERE total_gaji < 2000; --Menghapus Data Penggajian dengan Total Gaji di Bawah 2000
+DELETE FROM Karyawan WHERE nama="Fitria"; -- Menghapus Karyawan dengan ID Tertentu
+DELETE FROM Cuti WHERE karyawan_id = 1; -- Menghapus Cuti untuk Karyawan Tertentu:
+DELETE FROM Lembur WHERE jumlah < 3; -- Menghapus Data Lembur dengan Jumlah Lembur Kurang dari 3 Jam:
+DELETE FROM Penggajian WHERE total_gaji < 2000; -- Menghapus Data Penggajian dengan Total Gaji di Bawah 2000
 
 
 -- Query Operator Penghubung AND dan OR 
@@ -313,8 +312,8 @@ SELECT * FROM Karyawan WHERE jenis_kelamin = 'Laki-laki' AND status = 'Kawin'; -
 SELECT * FROM Karyawan WHERE jenis_kelamin = 'Laki-laki' OR status = 'Kawin'; -- SELECT * FROM Karyawan WHERE jenis_kelamin = 'Laki-laki' OR status = 'Kawin';
 
 -- Qeury Perhitungan MAX, MIN, SUM, dan COUNT
-SELECT MAX(jumlah_gaji) FROM Penggajian; --Mengambil Gaji tertinggi dari tabel Penggajian
-SELECT MIN(jumlah_gaji) FROM Penggajian; --Mengambil Gaji terendah dari tabel Penggajian
-SELECT SUM(jumlah_gaji) FROM Penggajian; --Menghitung total gaji dari semua entri Penggajian
-SELECT COUNT(*) FROM Karyawan; --Menghitung jumlah total entri dalam tabel Karyawan
-SELECT COUNT(*) FROM Karyawan WHERE status = 'Belum Kawin'; --Menghitung jumlah karyawan yang memiliki status "Belum Kawin"
+SELECT MAX(jumlah_gaji) FROM Penggajian; -- Mengambil Gaji tertinggi dari tabel Penggajian
+SELECT MIN(jumlah_gaji) FROM Penggajian; -- Mengambil Gaji terendah dari tabel Penggajian
+SELECT SUM(jumlah_gaji) FROM Penggajian; -- Menghitung total gaji dari semua entri Penggajian
+SELECT COUNT(*) FROM Karyawan; -- Menghitung jumlah total entri dalam tabel Karyawan
+SELECT COUNT(*) FROM Karyawan WHERE status = 'Belum Kawin'; -- Menghitung jumlah karyawan yang memiliki status "Belum Kawin"
